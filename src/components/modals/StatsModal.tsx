@@ -70,7 +70,7 @@ export const StatsModal = ({
             type="button"
             className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-orange-600 text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:text-sm"
             onClick={() => {
-              shareStatus(guesses, isGameLost, Boolean(hintUsed))
+              shareStatus(guesses, isGameLost, isHardMode)
               handleShare()
             }}
           >
