@@ -46,7 +46,7 @@ import {
 import './App.css'
 
 function App() {
-  const prefersDarkMode = true;
+  const prefersDarkMode = true
 
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
