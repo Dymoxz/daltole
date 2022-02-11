@@ -48,6 +48,7 @@ let hintUsed = false;
 
 
 function App() {
+  setUsed();
   console.log(hintUsed);
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
