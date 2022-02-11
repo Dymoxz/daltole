@@ -1,6 +1,6 @@
 export const GAME_TITLE = 'Daltle'
 
-export const WIN_MESSAGES = ['Goed gedaan!', 'Toppie', 'Lekker bezig!']
+export const WIN_MESSAGES = ['Goed gedaan!', 'Toppie', 'Lekker bezig!', 'Geweldig!', 'Les gooo!', 'Pro gamer moment', 'Big brain time', 'Hacks?']
 export const GAME_COPIED_MESSAGE = 'Spel gekopieerd'
 export const ABOUT_GAME_MESSAGE = 'Hint'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'Niet genoeg letters'
@@ -9,7 +9,7 @@ export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `De docent was ${solution}`
 export const ENTER_TEXT = 'Enter'
 export const DELETE_TEXT = 'Delete'
-export const STATISTICS_TITLE = 'statistieken'
+export const STATISTICS_TITLE = 'Statistieken'
 export const GUESS_DISTRIBUTION_TEXT = 'Gok verdeling'
 export const NEW_WORD_TEXT = 'Nieuwe docent over'
 export const SHARE_TEXT = 'Delen'
