@@ -46,9 +46,7 @@ import {
 import './App.css'
 
 function App() {
-  const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
-  ).matches
+  const prefersDarkMode = true;
 
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
