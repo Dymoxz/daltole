@@ -9,7 +9,6 @@ type Props = {
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   if (isOpen) {
     setUsed();
-    console.log("coom");
   }
   return (
     <BaseModal title="Docentenlijst" isOpen={isOpen} handleClose={handleClose}>

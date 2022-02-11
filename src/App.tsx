@@ -48,6 +48,7 @@ let hintUsed = false;
 
 
 function App() {
+  console.log(hintUsed);
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
@@ -295,10 +296,6 @@ function App() {
 
 function setUsed() {
   hintUsed = true;
-}
-
-function getUsed() {
-  return hintUsed;
 }
 
 export default App
