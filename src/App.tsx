@@ -113,7 +113,7 @@ function App() {
     setIsHardMode(isHard)
     localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
   }
-
+  saveGameStateToLocalStorage({ guesses, solution, hintUsed });
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution, hintUsed })
   }, [guesses])
