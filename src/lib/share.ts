@@ -2,6 +2,7 @@ import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
 import { GAME_TITLE } from '../constants/strings'
 
+
 export const shareStatus = (
   guesses: string[],
   lost: boolean,
