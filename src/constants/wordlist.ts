@@ -184,5 +184,5 @@ export const WORDS = [
   'boog',
   'schd',
   'venm',
-  'kocr'
+  'kocr',
 ]

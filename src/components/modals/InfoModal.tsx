@@ -8,10 +8,14 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="Hoe moet je spelen" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title="Hoe moet je spelen"
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Raad de afkorting van de docent in 8 keer. Na elke gok, veranderd de kleur 
-        van de letters om te laten zien hoe dichtbij je was.
+        Raad de afkorting van de docent in 8 keer. Na elke gok, veranderd de
+        kleur van de letters om te laten zien hoe dichtbij je was.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
