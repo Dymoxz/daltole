@@ -1,6 +1,7 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
 import { GAME_TITLE } from '../constants/strings'
+import getUsed from './../App'
 
 export const shareStatus = (
   guesses: string[],
@@ -8,8 +9,9 @@ export const shareStatus = (
   isHardMode: boolean
 ) => {
   navigator.clipboard.writeText(
-    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/8${isHardMode ? '*' : ''
+    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/8 ${getUsed() ? 'Hint used ✅' : 'No hint used 😎'
     }\n\n` + generateEmojiGrid(guesses) + `\n\nhttps://www.daltle.games/`
+
   )
 }
 

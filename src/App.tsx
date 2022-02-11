@@ -44,10 +44,11 @@ import {
 } from './lib/localStorage'
 
 import './App.css'
+let hintUsed = false;
+
 
 function App() {
   const prefersDarkMode = true
-
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
@@ -290,6 +291,14 @@ function App() {
       />
     </div>
   )
+}
+
+function setUsed() {
+  hintUsed = true;
+}
+
+function getUsed() {
+  return hintUsed;
 }
 
 export default App

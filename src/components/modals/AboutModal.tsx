@@ -1,4 +1,5 @@
 import { BaseModal } from './BaseModal'
+import setUsed from './../../App'
 
 type Props = {
   isOpen: boolean
@@ -6,9 +7,11 @@ type Props = {
 }
 
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
+  setUsed();
   return (
     <BaseModal title="Docentenlijst" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
+        <br/>
         AARM  M. Aarnoutse <br/><br/>
         AAZZ	Z. Aazamy <br/><br/>
         ADEL	L. van den Adel <br/><br/>
