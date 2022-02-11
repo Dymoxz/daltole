@@ -1,3 +1,5 @@
+import ReactGA from 'react-ga'
+import { Component } from "react"
 import {
   InformationCircleIcon,
   ChartBarIcon,
@@ -206,6 +208,15 @@ function App() {
       }
     }
   }
+  class App extends Component {
+    setGA = () => {
+      ReactGA.initialize('G-5J49V4H5EF');
+      ReactGA.pageview('Init page view');
+    };
+    componentDidMount(){
+      this.setGA();
+    }
+  };
 
   return (
     <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
