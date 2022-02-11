@@ -1,5 +1,5 @@
 import { BaseModal } from './BaseModal'
-import {setUsed} from './../../App'
+import {setUsed, hintUsed} from './../../App'
 
 type Props = {
   isOpen: boolean

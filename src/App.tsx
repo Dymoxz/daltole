@@ -259,7 +259,7 @@ function App() {
           setSuccessAlert(GAME_COPIED_MESSAGE)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
-        isHardMode={isHardMode}
+        isHardMode={hintUsed}
       />
       <AboutModal
         isOpen={isAboutModalOpen}
@@ -297,5 +297,5 @@ function setUsed() {
   hintUsed = true;
 }
 
-export {setUsed}
+export {setUsed, hintUsed}
 export default App
