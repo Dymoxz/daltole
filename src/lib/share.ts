@@ -9,7 +9,7 @@ export const shareStatus = (
   isHardMode: boolean
 ) => {
   navigator.clipboard.writeText(
-    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/8 ${getUsed() ? 'Hint used ✅' : 'No hint used 😎'
+    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/8 ${getUsed() ? 'Hint used ' : 'No hint used '
     }\n\n` + generateEmojiGrid(guesses) + `\n\nhttps://www.daltle.games/`
 
   )
