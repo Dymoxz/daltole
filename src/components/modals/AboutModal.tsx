@@ -1,5 +1,5 @@
 import { BaseModal } from './BaseModal'
-import setUsed from './../../App'
+import {setUsed} from './../../App'
 
 type Props = {
   isOpen: boolean
@@ -9,8 +9,6 @@ type Props = {
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   if (isOpen) {
     setUsed();
-    console.log('ahjhhhh daydyd')
-
   }
   return (
     <BaseModal title="Docentenlijst" isOpen={isOpen} handleClose={handleClose}>
