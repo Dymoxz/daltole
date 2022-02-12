@@ -51,7 +51,7 @@ let hintUsed = false;
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize('UA-220145460-1')
+    ReactGA.initialize('UA-220145460-2')
 
     ReactGA.pageview('/');  
   });
