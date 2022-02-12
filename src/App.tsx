@@ -15,6 +15,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
+
 import {
   GAME_TITLE,
   WIN_MESSAGES,
@@ -45,9 +46,10 @@ import {
 
 import './App.css'
 let hintUsed = false;
-ReactGA.initialize('UA-220145460-1')
 
 function App() {
+  ReactGA.initialize('UA-220145460-1')
+  ReactGA.pageview(window.location.pathname + window.location.search);  
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
