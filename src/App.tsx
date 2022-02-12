@@ -149,9 +149,10 @@ function App() {
         setTimeout(() => {
           setSuccessAlert('')
           setIsStatsModalOpen(true)
+          trackEvent('Won', 'Won the game', true)
         }, ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
-      trackEvent('Won', 'Won the game', true)
+      
     }
     if (isGameLost) {
       setTimeout(() => {
