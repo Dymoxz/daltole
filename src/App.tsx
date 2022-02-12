@@ -15,7 +15,6 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
-
 import {
   GAME_TITLE,
   WIN_MESSAGES,
@@ -45,16 +44,23 @@ import {
 } from './lib/localStorage'
 
 import './App.css'
+const { v4: uuidv4 } = require('uuid');
 let hintUsed = false;
-
+let uuid;
 
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize('UA-220145460-2')
-    // localStorage.setItem('userID', userId)
+    uuid = localStorage.getItem('uuid');
+    if (uuid == null) {
+      ReactGA.initialize('UA-220145460-2');
+      uuid = uuidv4();
+      console.log('nigga noob', uuid)
+      localStorage.setItem('uuid', uuid);
+    }
+    ReactGA.set({ userId: uuid })
     ReactGA.pageview('/');  
-    ReactGA.addTrackers
+    ReactGA.addTrackers('UA-220145460-2');
   });
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
