@@ -51,9 +51,9 @@ let uuid;
 
 function App() {
   useEffect(() => {
+    ReactGA.initialize('UA-220145460-2');
     uuid = localStorage.getItem('uuid');
     if (uuid == null) {
-      ReactGA.initialize('UA-220145460-2');
       uuid = uuidv4();
       console.log('nigga noob', uuid)
       localStorage.setItem('uuid', uuid);
