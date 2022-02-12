@@ -61,7 +61,8 @@ function App() {
     ReactGA.set({ userId: uuid })
     console.log('nigga pro', uuid)
     ReactGA.pageview('/');  
-    ReactGA.event({ category: 'Projects', action: 'Opened site'});
+    ReactGA.addTrackers('UA-220145460-2');
+    ReactGA.event({ category: 'Start', action: 'Opened site', nonInteraction: true});
   });
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
