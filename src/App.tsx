@@ -47,16 +47,16 @@ import './App.css'
 const { v4: uuidv4 } = require('uuid');
 let hintUsed = false;
 let uuid;
-const useGAEventsTracker = (category = 'Klonk') =>{
-  const trackEvent = () => {
-    ReactGA.event({ category: 'Start', action: 'Opened site'})
+const useGAEventsTracker = (category = 'Event Category') =>{
+  const trackEvent = (action = 'action') => {
+    ReactGA.event({ category, action});
   }
   return trackEvent;
 };
 
 
 function App() {
-  const GAEventsTracker = useGAEventsTracker()
+  const GAEventsTracker = useGAEventsTracker('Share')
   useEffect(() => {
     ReactGA.initialize('UA-220145460-2', {debug: true});
     uuid = localStorage.getItem('uuid');
@@ -276,7 +276,7 @@ function App() {
         isGameLost={isGameLost}
         isGameWon={isGameWon}
         handleShare={() => {
-          GAEventsTracker();
+          GAEventsTracker('Shared Results');
           setSuccessAlert(GAME_COPIED_MESSAGE)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
