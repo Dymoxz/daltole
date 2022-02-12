@@ -47,10 +47,14 @@ import {
 import './App.css'
 let hintUsed = false;
 
-ReactGA.initialize('UA-220145460-1')
+
 
 function App() {
- 
+  useEffect(() => {
+    ReactGA.initialize('UA-220145460-1')
+
+    ReactGA.pageview('/');  
+  });
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
@@ -120,10 +124,6 @@ function App() {
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution, hintUsed })
   }, [guesses])
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);  
-  });
 
   useEffect(() => {
     if (isGameWon) {
