@@ -52,8 +52,9 @@ let hintUsed = false;
 function App() {
   useEffect(() => {
     ReactGA.initialize('UA-220145460-2')
-
+    // localStorage.setItem('userID', userId)
     ReactGA.pageview('/');  
+    ReactGA.addTrackers
   });
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
