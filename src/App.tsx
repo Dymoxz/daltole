@@ -95,7 +95,7 @@ function App() {
     }
     const gameWasWon = loaded.guesses.includes(solution)
     if (gameWasWon) {
-      trackEvent('Won', 'Game won', true)
+      
       setIsGameWon(true)
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
@@ -151,6 +151,7 @@ function App() {
           setIsStatsModalOpen(true)
         }, ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+      trackEvent('Won', 'Won the game', true)
     }
     if (isGameLost) {
       setTimeout(() => {
