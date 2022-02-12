@@ -61,7 +61,6 @@ function App() {
     ReactGA.set({ userId: uuid })
     console.log('nigga pro', uuid)
     ReactGA.pageview('/');  
-    ReactGA.addTrackers('UA-220145460-2');
     ReactGA.event({ category: 'Projects', action: 'Opened site'});
   });
   const prefersDarkMode = true
