@@ -47,13 +47,9 @@ import './App.css'
 const { v4: uuidv4 } = require('uuid');
 let hintUsed = false;
 let uuid;
-const useGAEventsTracker = (category = 'Event Category') =>{
-  const trackEvent = (action = 'action', nonInteraction=false) => {
-    ReactGA.event({ category, action, nonInteraction});
-  }
-  return trackEvent;
+function trackEvent(category='category', action = 'action', nonInteraction=false){
+  ReactGA.event({ category, action, nonInteraction});
 };
-
 
 function App() {
   useEffect(() => {
@@ -91,7 +87,7 @@ function App() {
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.hintUsed) {
-      useGAEventsTracker('Hint')('Hint used', true)
+      trackEvent('Hint', 'Hint used', true)
       hintUsed = true;
     }
     if (loaded?.solution !== solution) {
@@ -99,11 +95,11 @@ function App() {
     }
     const gameWasWon = loaded.guesses.includes(solution)
     if (gameWasWon) {
-      useGAEventsTracker('Won')('Won the game', true)
+      trackEvent('Won', 'Game won', true)
       setIsGameWon(true)
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
-      useGAEventsTracker('Lost')('Lost the game', true)
+      trackEvent('Loss', 'Game lost', true)
       setIsGameLost(true)
     }
     return loaded.guesses
@@ -278,7 +274,7 @@ function App() {
         isGameLost={isGameLost}
         isGameWon={isGameWon}
         handleShare={() => {
-          useGAEventsTracker('Share')('Shared Results', false)
+          trackEvent('Share', 'Shared results', false)
           setSuccessAlert(GAME_COPIED_MESSAGE)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
