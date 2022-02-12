@@ -48,8 +48,8 @@ import './App.css'
 let hintUsed = false;
 
 function App() {
-  ReactGA.initialize('UA-220145460-1')
-  ReactGA.pageview(window.location.pathname + window.location.search);  
+  
+ 
   const prefersDarkMode = true
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
@@ -121,6 +121,7 @@ function App() {
   }, [guesses])
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);  
     if (isGameWon) {
       setTimeout(() => {
         setSuccessAlert(
@@ -212,6 +213,9 @@ function App() {
       }
     }
   }
+
+  
+
 
   return (
     <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
