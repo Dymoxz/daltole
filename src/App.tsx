@@ -59,6 +59,7 @@ function App() {
       localStorage.setItem('uuid', uuid);
     }
     ReactGA.set({ userId: uuid })
+    console.log('nigga pro', uuid)
     ReactGA.pageview('/');  
     ReactGA.addTrackers('UA-220145460-2');
   });
