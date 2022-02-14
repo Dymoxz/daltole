@@ -35,6 +35,7 @@ import {
   isWordInWordList,
   isWinningWord,
   solution,
+  hintUsedDay,
   findFirstUnusedReveal,
 } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -46,7 +47,7 @@ import {
 import './App.css'
 import { convertCompilerOptionsFromJson } from 'typescript'
 const { v4: uuidv4 } = require('uuid');
-let hintUsed = false;
+let hintUsed = hintUsedDay;
 let uuid;
 function trackEvent(category='category', action = 'action', nonInteraction=false){
   ReactGA.event({ category, action, nonInteraction});

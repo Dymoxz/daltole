@@ -51,7 +51,8 @@ export const getWordOfDay = () => {
     solution: WORDS[index % WORDS.length].toUpperCase(),
     solutionIndex: index,
     tomorrow: nextday,
+    hintUsedDay: false
   }
 }
 
-export const { solution, solutionIndex, tomorrow } = getWordOfDay()
+export const { solution, solutionIndex, tomorrow, hintUsedDay } = getWordOfDay()
