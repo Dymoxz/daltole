@@ -164,9 +164,10 @@ function App() {
     }
     if (isGameLost) {
       setTimeout(() => {
-        gameLost = true
+        
         setIsStatsModalOpen(true)
       }, GAME_LOST_INFO_DELAY)
+      gameLost = true
     }
   }, [isGameWon, isGameLost])
 
@@ -328,9 +329,7 @@ function setUsed() {
   if (gameWon !== true || gameLost !== true) {
     console.log('hintuh', hintUsed)
     hintUsed = true;
-  } else {
-    hintUsed = hintUsed
-  }
+  } 
 }
 
 export {setUsed, hintUsed}
