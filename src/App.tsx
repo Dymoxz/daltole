@@ -154,6 +154,7 @@ function App() {
           setIsStatsModalOpen(true)
           gameWon = true
           console.log('WoNg', gameWon)
+          console.log('hiint', hintUsed)
           trackEvent('Won', 'Won the game', true)
         }, ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
@@ -282,6 +283,7 @@ function App() {
         isGameWon={isGameWon}
         handleShare={() => {
           trackEvent('Share', 'Shared results', false)
+          console.log('shareeeee hintuh', hintUsed, 'WOOOONG', gameWon)
           setSuccessAlert(GAME_COPIED_MESSAGE)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
