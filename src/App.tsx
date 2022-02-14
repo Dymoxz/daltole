@@ -44,6 +44,7 @@ import {
 } from './lib/localStorage'
 
 import './App.css'
+import { convertCompilerOptionsFromJson } from 'typescript'
 const { v4: uuidv4 } = require('uuid');
 let hintUsed = false;
 let uuid;
@@ -142,7 +143,7 @@ function App() {
 
   useEffect(() => {
     if (isGameWon) {
-      gameWon = true
+      
       setTimeout(() => {
         setSuccessAlert(
           WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
@@ -151,6 +152,8 @@ function App() {
         setTimeout(() => {
           setSuccessAlert('')
           setIsStatsModalOpen(true)
+          gameWon = true
+          console.log('WoNg', gameWon)
           trackEvent('Won', 'Won the game', true)
         }, ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
@@ -318,6 +321,7 @@ function App() {
 
 function setUsed() {
   if (gameWon !== true) {
+    console.log('hintuh', hintUsed)
     hintUsed = true;
   } else {
     hintUsed = hintUsed
