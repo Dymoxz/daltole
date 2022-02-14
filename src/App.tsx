@@ -50,7 +50,7 @@ let uuid;
 function trackEvent(category='category', action = 'action', nonInteraction=false){
   ReactGA.event({ category, action, nonInteraction});
 };
-
+var gameWon = false
 function App() {
   useEffect(() => {
     ReactGA.initialize('UA-220145460-2', {debug: true});
@@ -82,6 +82,7 @@ function App() {
       ? true
       : false
   )
+  gameWon = isGameWon
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
@@ -315,7 +316,11 @@ function App() {
 }
 
 function setUsed() {
-  hintUsed = true;
+  if (gameWon !== true) {
+    hintUsed = true;
+  } else {
+    hintUsed = hintUsed
+  }
 }
 
 export {setUsed, hintUsed}
