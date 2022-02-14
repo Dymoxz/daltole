@@ -142,6 +142,7 @@ function App() {
 
   useEffect(() => {
     if (isGameWon) {
+      gameWon = true
       setTimeout(() => {
         setSuccessAlert(
           WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
