@@ -52,6 +52,7 @@ function trackEvent(category='category', action = 'action', nonInteraction=false
   ReactGA.event({ category, action, nonInteraction});
 };
 var gameWon = false
+var gameLost = false
 function App() {
   useEffect(() => {
     ReactGA.initialize('UA-220145460-2', {debug: true});
@@ -84,6 +85,7 @@ function App() {
       : false
   )
   gameWon = isGameWon
+  gameLost = isGameLost
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
@@ -162,6 +164,7 @@ function App() {
     }
     if (isGameLost) {
       setTimeout(() => {
+        gameLost = true
         setIsStatsModalOpen(true)
       }, GAME_LOST_INFO_DELAY)
     }
@@ -322,7 +325,7 @@ function App() {
 }
 
 function setUsed() {
-  if (gameWon !== true) {
+  if (gameWon !== true || gameLost !== true) {
     console.log('hintuh', hintUsed)
     hintUsed = true;
   } else {
