@@ -92,8 +92,7 @@ function App() {
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.hintUsed) {
-      trackEvent('Hint', 'Hint used', true)
-      hintUsed = true;
+      hintUsed = false;
     }
     if (loaded?.solution !== solution) {
       return []
