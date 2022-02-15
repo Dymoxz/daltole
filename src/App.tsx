@@ -92,7 +92,8 @@ function App() {
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.hintUsed) {
-      hintUsed = false;
+      hintUsed = Boolean(localStorage.getItem('hintUsed'))
+      console.log('HILFEE', hintUsed)
     }
     if (loaded?.solution !== solution) {
       return []
@@ -328,6 +329,7 @@ function App() {
 function setUsed() {
     console.log('hintuh', hintUsed)
     hintUsed = true;
+
 }
 
 export {setUsed, hintUsed}
