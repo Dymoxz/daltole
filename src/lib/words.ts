@@ -46,12 +46,14 @@ export const getWordOfDay = () => {
   const msInDay = 86400000
   const index = Math.floor((now - epochMs) / msInDay)
   const nextday = (index + 1) * msInDay + epochMs
+  const hintDay = false
+  localStorage.setItem('hintUsed', 'false')
 
   return {
     solution: WORDS[index % WORDS.length].toUpperCase(),
     solutionIndex: index,
     tomorrow: nextday,
-    hintUsedDay: false
+    hintUsedDay: hintDay
   }
 }
 
