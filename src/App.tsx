@@ -327,10 +327,8 @@ function App() {
 }
 
 function setUsed() {
-  if (gameWon !== true || gameLost !== true) {
     console.log('hintuh', hintUsed)
     hintUsed = true;
-  } 
 }
 
 export {setUsed, hintUsed}
