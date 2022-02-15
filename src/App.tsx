@@ -56,7 +56,7 @@ var gameWon = false
 var gameLost = false
 function App() {
   useEffect(() => {
-    ReactGA.initialize('UA-220145460-2', {debug: true});
+    ReactGA.initialize('UA-220145460-2');
     uuid = localStorage.getItem('uuid');
     if (uuid == null) {
       uuid = uuidv4();
