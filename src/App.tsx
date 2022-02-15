@@ -87,7 +87,8 @@ function App() {
   )
   gameWon = isGameWon
   gameLost = isGameLost
-  hintUsed = Boolean(localStorage.getItem('hintUsed'))
+  console.log( Boolean(localStorage.getItem('hintUsed')) );
+  hintUsed = Boolean(localStorage.getItem('hintUsed')) 
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
