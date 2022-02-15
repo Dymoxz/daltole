@@ -48,7 +48,8 @@ export const getWordOfDay = () => {
   const nextday = (index + 1) * msInDay + epochMs
   const hintDay = false
   localStorage.setItem('hintUsed', 'false')
-  console.log('gamer moment ' + Boolean(localStorage.getItem('hintUsed')));
+  const bool = (localStorage.getItem('hintUsed') == 'true')
+  console.log('gamer moment ' + bool);
 
   return {
     solution: WORDS[index % WORDS.length].toUpperCase(),
