@@ -60,11 +60,9 @@ function App() {
     uuid = localStorage.getItem('uuid');
     if (uuid == null) {
       uuid = uuidv4();
-      console.log('nigga noob', uuid)
       localStorage.setItem('uuid', uuid);
     }
     ReactGA.set({ userId: uuid })
-    console.log('nigga pro', uuid)
     ReactGA.pageview('/');  
     ReactGA.addTrackers('UA-220145460-2');
     // ReactGA.event({ category: 'Start', action: 'Opened site', nonInteraction: true});
@@ -88,14 +86,12 @@ function App() {
   gameWon = isGameWon
   gameLost = isGameLost
   var booly = (localStorage.getItem('hintUsed') == 'true');
-  console.log('yummy', booly);
   hintUsed = booly
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.hintUsed) {
-      console.log('HILFEE', hintUsed)
     }
     if (loaded?.solution !== solution) {
       return []
@@ -158,8 +154,6 @@ function App() {
           setSuccessAlert('')
           setIsStatsModalOpen(true)
           gameWon = true
-          console.log('WoNg', gameWon)
-          console.log('hiint', hintUsed)
           trackEvent('Won', 'Won the game', true)
         }, ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
@@ -290,7 +284,6 @@ function App() {
         isGameWon={isGameWon}
         handleShare={() => {
           trackEvent('Share', 'Shared results', false)
-          console.log('shareeeee hintuh', hintUsed, 'WOOOONG', gameWon)
           setSuccessAlert(GAME_COPIED_MESSAGE)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
@@ -329,8 +322,8 @@ function App() {
 }
 
 function setUsed() {
-    console.log('hintuh', hintUsed)
     localStorage.setItem('hintUsed', 'true')
+    console.log(localStorage.getItem('hintUsed'))
     hintUsed = true;
 
 }
