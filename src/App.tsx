@@ -328,6 +328,7 @@ function App() {
 
 function setUsed() {
     console.log('hintuh', hintUsed)
+    localStorage.setItem('hintUsed', 'true')
     hintUsed = true;
 
 }
