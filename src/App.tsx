@@ -42,7 +42,7 @@ import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
-} from './lib/localStorage'
+} from './lib/localStorage' 
 
 import './App.css'
 import { convertCompilerOptionsFromJson } from 'typescript'
@@ -87,12 +87,12 @@ function App() {
   )
   gameWon = isGameWon
   gameLost = isGameLost
+  hintUsed = Boolean(localStorage.getItem('hintUsed'))
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.hintUsed) {
-      hintUsed = Boolean(localStorage.getItem('hintUsed'))
       console.log('HILFEE', hintUsed)
     }
     if (loaded?.solution !== solution) {
